@@ -3,11 +3,19 @@ import Cart from '../components/Cart'
 
 
 
-const Backdrop = () => {
+const Backdrop = (props) => {
   return (
-    <section className="backdrop">
-      <Cart/>
-    </section>
+    <>
+
+     {props.showCard && (
+      <><section className="backdrop" onClick={props.hideCardHandler} />
+      <Cart hideCardHandler={props.hideCardHandler}/></>
+      
+      )
+     }
+  
+    </>
+    
   )
 }
 
